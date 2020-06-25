@@ -67,9 +67,19 @@ body {
     padding: 5px;
     border-radius: 3px;
     font-size: 0.8em;
+    border-color: transparent;
+    margin: 10px 0;
 }
 
 .delete-comment {
     cursor: pointer;
     color: #e74c3c;
+}
+
+.add-comment {
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
 }

@@ -18,12 +18,12 @@ const Tweeter = () => {
             ]
         }
     ];
-    let postIdCounter = _posts.length;
+    let postIdCounter = () => _posts.length;
     let commentIdCounter = _posts.map(post => post.comments.length).reduce((a, b) => a + b);
 
     const getPosts = () => _posts;
 
-    const addPost = text => _posts.push({ text: text, id: "p" + parseInt(postIdCounter + 1), comments: [] });
+    const addPost = text => _posts.push({ text: text, id: "p" + parseInt(postIdCounter() + 1), comments: [] });
 
     const removePost = postId => {
         for (let post in _posts) {
@@ -78,8 +78,8 @@ const Tweeter = () => {
 //============================
 //============================
 
-// tweeter.addComment("Damn straight it is!", "p3")
-// tweeter.addComment("Second the best!", "p2")
+// tweeter.addComment("Damn straight it is!", "p3");
+// tweeter.addComment("Second the best!", "p2");
 // console.log(tweeter.getPosts())
 // This should be added to the third post's comments array:
 // {id: "c7", text: "Damn straight it is!"}
@@ -87,7 +87,7 @@ const Tweeter = () => {
 // This should be added to the second post's comments array:
 // {id: "c8", text: "Second the best!"}
 
-// tweeter.removeComment("p2", "c6")
-// console.log(tweeter.getPosts())
+// tweeter.removeComment("p2", "c6");
+// console.log(tweeter.getPosts());
 // This comment should be removed:
 // {id: "c6", text: "Haha second place what a joke."}
