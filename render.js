@@ -9,7 +9,7 @@ const Renderer = () => {
                                         <input class="comment-input" placeholder="Got something to say?">
                                         <button class="submit-comment">Comment</button>
                                     </div>
-                                    <button class="delete">Delete Post</button>
+                                    <button class="delete-post">Delete Post</button>
                                 </div>`);
             for (let comment of post.comments) {
                 $(`ul[data-id="${post.id}"]`).append(`<li class="comment" data-id="${comment.id}">

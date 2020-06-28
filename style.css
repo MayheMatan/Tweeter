@@ -59,7 +59,7 @@ body {
     margin: 10px;
 }
 
-.delete {
+.delete-post {
     cursor: pointer;
     color: #ecf0f1;
     background-color: #e74c3c;

@@ -8,7 +8,7 @@ const post = () => {
     renderer.renderPosts(tweeter.getPosts());
 };
 
-$("#posts").on("click", ".delete", function() {
+$("#posts").on("click", ".delete-post", function() {
     tweeter.removePost($(this).closest(".post").data().id);
     renderer.renderPosts(tweeter.getPosts());
 });

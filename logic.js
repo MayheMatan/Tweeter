@@ -19,16 +19,16 @@ const Tweeter = () => {
         }
     ];
 
-    let postIdCounter = _posts.length;
-    let commentIdCounter = _posts.map(post => post.comments.length).reduce((a, b) => a + b);
+    let postIdCounter = () => _posts.length;
+    let commentIdCounter = () => _posts.map(post => post.comments.length).reduce((a, b) => a + b);
 
     const getPosts = () => _posts;
 
-    const addPost = text => _posts.push({ text: text, id: "p" + postIdCounter + 1, comments: [] });
+    const addPost = text => _posts.push({ text: text, id: `p${postIdCounter() + 1}`, comments: [] });
 
     const removePost = postId => {
         for (let i in _posts) {
-            if (_posts[post].id === postId) {
+            if (_posts[i].id === postId) {
                 _posts.splice(i, 1);
             }
         }
@@ -37,7 +37,7 @@ const Tweeter = () => {
     const addComment = (text, postId) => {
         for (let post of _posts) {
             if (post.id === postId) {
-                post.comments.push({ id: "c" + commentIdCounter + 1, text: text });
+                post.comments.push({ id: `c${commentIdCounter() + 1}`, text: text });
                 return;
             }
         }
