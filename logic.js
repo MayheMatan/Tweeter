@@ -46,9 +46,9 @@ const Tweeter = () => {
     const removeComment = (postId, commentId) => {
         for (let post of _posts) {
             if (post.id === postId) {
-                for (let comment in post.comments) {
-                    if (post.comments[comment].id === commentId) {
-                        post.comments.splice(comment, 1);
+                for (let i in post.comments) {
+                    if (post.comments[i].id === commentId) {
+                        post.comments.splice(i, 1);
                         return;
                     }
                 }
